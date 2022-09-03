@@ -1,0 +1,945 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+body {
+    font-family:"Yu Gothic Medium", "Caveat", "游ゴシック Medium", "YuGothic", "游ゴシック体","ヒラギノ角ゴ pro W3", sans-serif;
+    line-height: 1.7;
+    color: #432;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+section {
+    min-height:100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+body {
+  font-family: 'Merienda', cursive;
+}
+
+/*ホーム*/
+#home {
+    background-image: url(fish111.jpg),radial-gradient(rgba(53, 204, 255, 0.713),rgba(51, 116, 247, 0.747));
+    background-color:rgba(54, 116, 116, 0.746);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    min-height:100vh;
+    height:300px;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    padding-top:20px;
+    clip-path:ellipse(80% 100% at 50% 0);
+    animation: fish0 25s infinite;
+    animation: shikotu 20s infinite;
+    margin-bottom:50px;
+}
+
+@keyframes fish0 {
+    25% { background-color: #2f90ff69; }
+    50% { background-color: #f7ff17ee; }
+    75% { background-color: #16f51ad1; }
+    100%{ background-color: #2f90ff69; }
+}
+
+@keyframes shikotu {
+    0% { background-image: url(images-2/fish111.jpg); }
+    30% { background-image: url(images-2/fish5.jpg); }
+    50% { background-image: url(images-2/fish17.jpg); }
+    70% { background-image: url(images-2/fish9.jpg); }
+    90% { background-image: url(images-2/fish16.jpg); }
+    100% { background-image: url(images-2/fish111.jpg); }
+}
+
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #19d0c7;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+
+/*三本線ボタン*/
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #55fbe2;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 80;
+    background-color: #71bff7;
+    transition: all 0.5s;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;
+}
+
+/*ホーム*/
+.page-title {
+    font-size:50px;
+    margin-top: 30px;
+    background-color: rgba(0, 153, 255, 0.321);
+}
+
+.page-title h5 {
+    font-size:40px;
+    margin-top:30px;
+    margin-left:20px;
+    background-color: rgba(0, 153, 255, 0.321);
+}
+
+.page-title p {
+    font-size:15px;
+}
+
+/*情報*/
+#news {
+    height:270px;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    margin-bottom:40px;
+    min-height: 100vh;
+    z-index:60;
+}
+
+.news-title {
+    color:white;
+    font-size:50px;
+    margin-left:620px;
+    text-shadow: 10px 0px 10px #0037cfde;
+}
+
+article img {
+    margin-bottom:20px;
+    width:500px;
+    height:400px;
+}
+
+/*スライドショー*/
+.slide-pic {
+    max-width: 100%;
+    height: 200px;
+    width: 300px;
+    margin-left:325px;
+    margin-top:20px;
+}
+
+/*画像配置*/
+.slideshow {
+    max-width: 100%;
+    height: 100%;
+    width:500px;
+    border-radius: 100%;
+    margin-left:250px;
+    margin-bottom:50px;
+    background-image: url(images-2/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 50%;
+}
+
+/*>*/
+.next {
+    float: right;
+    top: 130px;
+    right: 10px;
+}
+
+/*<*/
+.back {
+    float: left;
+    top: 130px;
+    right: 0px;
+}
+/*矢印のデザイン*/
+.arrow {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 16px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.arrow::before,
+.arrow::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+
+.next::before {
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    border-top: 5px solid rgb(255, 255, 255);
+    border-right: 5px solid rgb(255, 255, 255);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.back::before {
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    border-left: 5px solid rgb(255, 255, 255);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*CSSアニメーションの指定*/
+.slideshow {
+    transition: background-image 0.5s ease-in;
+}
+
+@media screen and (max-width:768px) { 
+  .slide-pic {
+    height: 250px;
+  }
+    .disc {
+        padding-top:5%;
+    }
+
+    /*>*/
+    .next {
+        top: 30px;
+    }
+
+    /*<*/
+    .back {
+        top: 30px;
+    }
+}
+
+/*記事部分*/
+.post-title {
+    font-family:"Yu Mincho", "YuMincho", serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+.post-title {
+    margin-left:505px;
+    color:rgb(255, 255, 255);
+}
+
+.news-p {
+    margin-bottom: 1rem;
+    color:white;
+    width:500px;
+    margin-left:450px;
+}
+
+.gallery {
+    margin:10px 10px;
+    text-align: center;
+    object-fit: cover;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+.gallery img {
+    width:320px;
+    height:210px;
+    border-radius: 100%;
+    margin:20px;
+}
+
+.aqua1 {
+    animation:fish1 12s infinite;
+}
+
+@keyframes fish1 {
+    0% , 100%{
+        transform: rotate(8deg);
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+}
+
+.aqua2 {
+    animation:fish2 11s infinite;
+}
+
+@keyframes fish2 {
+    0% , 100%{
+        transform: rotate(5deg);
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+}
+
+.aqua3 {
+    animation:fish3 10s infinite;
+}
+
+@keyframes fish3 {
+    0% , 100%{
+        transform: rotate(6deg);
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+}
+
+.aqua4 {
+    animation:fish4 9s infinite;
+}
+
+@keyframes fish4 {
+    0% , 100%{
+        transform: rotate(8deg);
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+}
+
+.aqua5 {
+    animation:fish5 10s infinite;
+}
+
+@keyframes fish5 {
+    0% , 100%{
+        transform: rotate(8deg);
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+}
+
+.aqua6 {
+    animation:fish6 11s infinite;
+}
+
+/*サーモンゾーン*/
+.lake-contents {
+    margin-top:20px;
+}
+
+.lake-p {
+    display:flex;
+    margin-left:150px;
+    color:white;
+    margin-top:50px;
+    font-size:20px;
+    margin-bottom:10px;
+    
+}
+
+.lake-p p {
+    margin-top:70px;
+    width:850px;
+    height:400px;
+    margin-right:90px;
+    color:white;
+}
+
+.lake-photo img {
+    width: 250px;
+    height:250px;
+    margin:0px;
+}
+
+.lake1 {
+    border-radius: 50% 50% 0 50%;
+}
+
+.lake2 {
+    border-radius: 50% 50% 50% 0;
+}
+
+.lake3 {
+    border-radius: 50% 0 50% 50%;
+}
+
+.lake4 {
+    border-radius: 0 50% 50% 50%;
+}
+
+.lake-title {
+    color:white;
+    font-size:50px;
+    text-align: center;
+    text-shadow: 10px 0px 10px #1e05ff;
+}
+
+/*千歳川ゾーン*/
+.river-title {
+    color:white;
+    font-size:50px;
+    margin-bottom:20px;
+    margin-top:30px;
+    text-align: center;
+    text-shadow: 10px 0px 10px #1e05ff;
+}
+
+.river-p {
+    display:flex;
+    margin-top:40px;
+    margin-bottom:30px;
+    margin-left:70px;
+}
+
+.river-p p {
+    width:900px;
+    margin-right:120px;
+    height:400px;
+    margin-top:80px;
+    color:white;
+    font-size:20px;
+}
+
+.river-photo {
+    margin-left:60px;
+}
+
+.river-photo img {
+    width:250px;
+    height:250px;
+    margin:0;
+}
+
+.river1 {
+    border-radius: 0% 50% 0% 50%;
+}
+
+.river2 {
+    border-radius: 50% 0% 50% 0%;
+}
+
+.river3 {
+    border-radius: 50% 0% 50% 0%;
+}
+
+.river4 {
+    border-radius: 0% 50% 0% 50%;
+}
+
+/*支笏湖ゾーン*/
+.shikotu-title {
+    color:white;
+    margin-left:565px;
+    font-size:50px;
+    text-shadow: 10px 0px 10px #fcb30a;
+}
+
+.shikotu-p {
+    color:white;
+    display:flex;
+    flex-direction: column;
+    width:450px;
+    margin-left:30px;
+    margin-bottom:20px;
+    font-size:20px;
+}
+
+.shikotu-p img {
+    width:450px;
+    height:350px;
+}
+
+.shikotu1 {
+    display:flex;
+    flex-direction: column-reverse;
+    margin-left:40px;
+}
+
+.shikotu2 {
+    display:flex;
+    flex-direction: column-reverse;
+}
+
+.shikotu-master {
+    display:flex;
+    margin-left:15px;
+}
+
+/*フォーム*/
+.contact-p {
+    color:white;
+    font-size:50px;
+    margin-left:300px;
+}
+
+form div {
+    margin-bottom: 14px;
+    color:white;
+    margin-left:320px;
+}
+    
+label {
+    font-size:1.8rem;
+    margin-bottom:5px;
+    display:block;
+    color:rgb(255, 255, 255);
+}
+    
+input[type="text"],
+input[type="email"],
+textarea {
+    background:rgba(98, 234, 249, 0.549);
+    border:1px #fff solid;
+    border-radius: 5px;
+    padding:10px;
+    font-size:1rem;
+}
+
+input[type="text"],
+input[type="email"] {
+    width:100%;
+    max-width:200px;
+}
+
+textarea {
+    width:100%;
+    max-width:480px;
+    height:6rem;
+}
+
+input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.64);
+    color:black;
+}
+
+.button {
+    font-size:1.2rem;
+    background:rgba(35, 174, 254, 0.535);
+    color:rgb(255, 250, 250);
+    border-radius:5px;
+    padding: 8px 32px;
+    margin-bottom:15px;
+    margin-left:320px;
+}
+
+.button:hover {
+    background:#15b4bc;
+}
+/*SNSゾーン*/
+.sns-title {
+    color:white;
+    font-size:50px;
+    text-shadow: 10px 0px 10px #0042f7;
+    text-align: center;
+}
+
+.sns-map {
+    color:white;
+    display:flex;
+    justify-content: space-between;
+    margin-right:340px;
+    margin-bottom:15px;
+}
+
+.sns-map li {
+    margin-left:390px;
+    width:300px;
+    font-size:20px;
+    text-shadow: black;
+}
+
+.sns-map p {
+    margin-left:390px;
+    font-size:20px;
+}
+
+.twitter {
+    color:white;
+    margin-right:340px;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+.twitter p {
+    width:300px;
+    font-size:20px;
+    margin-left:390px;
+}
+
+.youtube {
+    color:white;
+    margin-left:0px;
+    display:flex;
+    margin-right:340px;
+    justify-content: space-between;
+    margin-bottom:30px;
+}
+
+.movie-2 {
+    display:none;
+}
+
+.youtube-p {
+    margin-left:390px;
+    font-size:20px;
+    width:300px;
+}
+
+/*モバイル版、レスポンシブ*/
+@media (max-width: 600px) {
+    .page-title {
+        font-size:15px;
+    }
+
+    .page-title h5 {
+        font-size:30px;
+    }
+
+    .page-title p {
+        font-size:16px;
+    }
+
+    #home article {
+        margin-top:70px;
+    }
+
+    #home {
+        min-height:790px;
+    }
+
+    article {
+        width:100%;
+    }
+    #news .page-title {
+        margin-top:25px;
+    }
+
+    .post-title {
+        width:250px;
+        margin-left:0px;
+    }
+
+    /*ホーム*/
+    .slideshow {
+        margin-left:20px;
+        width:300px;
+    }
+
+    .slide-pic {
+        margin-left:35px;
+        margin-right:0px;
+    }
+
+    .next {
+        margin-top:80px;
+    }
+
+    .back {
+        margin-top:80px;
+    }
+
+    /*ニュース*/
+    .news-title {
+        margin-left:120px;
+    }
+
+    .news-p {
+        margin-left:60px;
+        width:280px;
+    }
+
+    .post-title {
+        margin-left:45px;
+        font-size:25px;
+        width:300px;
+    }
+
+    .gallery img {
+        margin:10px;
+    }
+
+    /*サーモンゾーン*/
+   .lake-title {
+        margin-top:210%;
+   }
+
+   .lake-p {
+        display:flex;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-top:0px;
+   }
+
+   .lake-p p {
+       margin-bottom:40px;
+       margin-left:13px;
+       margin-top:50px;
+       width:280px;
+       height:300px;
+       font-size:18px;
+   }
+   
+   .lake-photo img {
+       margin:0px;
+       width:120px;
+       height:110px;
+   }
+
+   .lake-photo {
+       margin-left:30px;
+       margin-top:83px;
+   }
+
+    /*千歳川ゾーン*/
+    .river-title {
+        font-size:40px;
+    }
+
+    .river-p {
+        display:flex;
+        flex-direction: column;
+        margin-right: 50px;
+        margin-top:0px;
+    }
+
+    .river-photo img {
+        width:120px;
+        height:100px;
+    }
+
+    .river-photo {
+        margin-right:0px;
+        width:300px;
+        margin-left:10px;
+        margin-top:20px;
+    }
+
+    .river-p p {
+        width:280px;
+        font-size:18px;
+        height:320px;
+        margin-top:20px;
+        margin-bottom:50px;
+    }
+
+    /*支笏湖ゾーン*/
+    .shikotu-title {
+        font-size:38px;
+        margin-left:98px;
+    }
+
+    .shikotu-p {
+        margin-left:0px;
+        width:300px;
+        font-size:18px;
+    }
+
+    .shikotu-p img {
+        margin-top:20px;
+        margin-left:0px;
+        margin-right:0px;
+        animation: none;
+    }
+
+    .shikotu1 {
+        display:none;
+    }
+
+    .shikotu2 {
+        display:none;
+    }
+
+    /*フォーム*/
+    .sns-title {
+        font-size:38px;
+    }
+
+    .requiry {
+        margin-left:0px;
+    }
+
+    #message {
+        width:300px;
+    }
+
+    form div {
+        margin-left:45px;
+    }
+
+    .contact-p {
+        color:white;
+        font-size:50px;
+        margin-left:60px;
+    }
+
+    .button {
+        margin-left:60px;
+    }
+
+    /*SNSゾーン*/
+    .sns-title {
+        text-align: center;
+        margin-bottom:15px;
+    }
+
+    .sns-map {
+        margin-left:40px;
+        margin-right:0px;
+        font-size:15px;
+        width:300px;
+        flex-wrap:wrap;
+    }
+
+    .sns-map li {
+        margin-left:15px;
+        margin-right:0px;
+        font-size:15px;
+    }
+
+    .sns-map p {
+        margin-left:0px;
+    }
+
+    .twitter {
+        margin-left:40px;
+        margin-right: 0;
+        color:white;
+        font-size:20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .twitter p {
+        height:120px;
+        width:300px;
+        font-size:15px;
+        margin-left:0px;
+    }
+    
+    .youtube {
+        margin-left:40px;
+        color:white;
+        font-size:20px;
+        flex-wrap: wrap;
+    }
+
+    .youtube-p {
+        margin-left:0px;
+        font-size:15px;
+        width:300px;
+    }
+
+    .movie {
+        display:none;
+    }
+
+    .movie-2 {
+        display: flex;
+    }
+}
+
+.footer-wrapper {
+    color:white;
+    font-size:20px;
+    background: rgba(10, 0, 122, 0.58);
+    text-align: center;
+}
